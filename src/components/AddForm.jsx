@@ -31,7 +31,7 @@ const AddForm = () => {
         <form className="max-w-sm mx-auto" onSubmit={handleSubmit}>
           <div className="mb-5">
             <label htmlFor="title" className="block mb-2 text-sm font-medium text-gray-900">Title</label>
-            <input type="text" id="title" ref={title} className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 " />
+            <input type="text" id="title" ref={title} className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 " required />
           </div>
           <div className="mb-5">
             <label htmlFor="description" className="block mb-2 text-sm font-medium text-gray-900 ">Description</label>

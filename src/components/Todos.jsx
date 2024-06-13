@@ -8,7 +8,6 @@ function Todos () {
   return (
     <div>
       {items.map((item) => {
-        console.log(item);
         return <TodoItem key={item.id} todo={item} />
       })}
     </div>
