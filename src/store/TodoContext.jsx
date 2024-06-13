@@ -10,9 +10,11 @@ const TodoContext = createContext({
   toggleTodo: () => {},
 });
 
+const todoStorageKey = 'todos';
+
 export function TodoContextProvider({children}) {
   const [todos, setTodos] = useState({
-    items: []
+    items: localStorage.getItem(todoStorageKey) ? JSON.parse(localStorage.getItem(todoStorageKey)) : [],
   });
 
   function handleAddTodo(item) {
@@ -58,7 +60,7 @@ export function TodoContextProvider({children}) {
   }
 
   useEffect(() => {
-    console.log(todos);
+    localStorage.setItem(todoStorageKey, JSON.stringify(todos.items));
   }, [todos]);
 
   return (
