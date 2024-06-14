@@ -1,7 +1,6 @@
 import todo_icon from '@/assets/todo_icon.png';
 import TodoContext from '@/store/TodoContext';
-import { useContext } from 'react';
-import { useRef } from 'react';
+import { useContext, useRef } from 'react';
 
 const AddForm = () => {
   const title = useRef();
@@ -28,7 +27,7 @@ const AddForm = () => {
         <h1 className='text-3xl font-semibold'>To-Do List</h1>
       </div>
       <div className='py-5 bg-white antialiased'>
-        <form className="max-w-sm mx-auto" onSubmit={handleSubmit}>
+        <form className="max-w-sm" onSubmit={handleSubmit}>
           <div className="mb-5">
             <label htmlFor="title" className="block mb-2 text-sm font-medium text-gray-900">Title</label>
             <input type="text" id="title" ref={title} className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 " required />
