@@ -9,7 +9,7 @@ const DetailPage = () => {
 
   return (
     <>
-      <TodoItem todo={() => store.getItem(id)} />
+      <TodoItem todo={store.getItem(id)} />
     </>
   )
 }

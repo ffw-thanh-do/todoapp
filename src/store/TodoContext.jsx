@@ -58,7 +58,7 @@ export function TodoContextProvider({children}) {
     editTodo: handleEditTodo,
     removeTodo: handleRemoveTodo,
     toggleTodo: handleToggleTodo,
-    getItem: (id) => todos.items.find((todo) => todo.id === id),
+    getItem: (id) => todos.items.find((todo) => String(todo.id) === String(id)),
   }
 
   useEffect(() => {

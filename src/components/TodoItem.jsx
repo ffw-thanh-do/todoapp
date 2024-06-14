@@ -3,7 +3,7 @@ import { useContext, useState } from 'react';
 import Card from '@/components/Card';
 import TodoForm from '@/components/TodoForm';
 
-const TodoItem = ({ todo }) => {
+const TodoItem = ({ todo, isDetail = false }) => {
   const store = useContext(TodoContext);
   const [editing, setEditing] = useState(false);
 
@@ -20,7 +20,7 @@ const TodoItem = ({ todo }) => {
 
   return (
     <>
-      {!editing && <Card todo={todo} editing={editing} setEditing={setEditing} /> }
+      {!editing && <Card todo={todo} editing={editing} setEditing={setEditing} isDetail={isDetail} /> }
       {editing && <TodoForm onSubmit={handleUpdate} todo={todo} setEditing={setEditing} /> }
     </>
   )
