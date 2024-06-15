@@ -2,6 +2,7 @@ import RootLayout from '@/layout/RootLayout';
 import DetailPage from '@/pages/DetailPage';
 import HomePage from '@/pages/HomePage';
 import PageError from '@/pages/PageError';
+import PageTodosCompleted from '@/pages/PageTodosCompleted';
 import { TodoContextProvider } from '@/store/TodoContext';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
@@ -13,6 +14,7 @@ function App() {
           <Route path="/" element={<RootLayout />}>
             <Route index element={<HomePage />} />
             <Route path="todo/:id" element={<DetailPage />} />
+            <Route path="todos/completed" element={<PageTodosCompleted />} />
             <Route path="*" element={<PageError />} />
           </Route>
         </Routes>

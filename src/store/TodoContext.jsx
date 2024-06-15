@@ -7,6 +7,7 @@ const TodoContext = createContext({
   removeTodo: () => {},
   toggleTodo: () => {},
   getItem: () => {},
+  getCompletedItems: () => {},
 });
 
 const todoStorageKey = 'todos';
@@ -50,6 +51,10 @@ export function TodoContextProvider({ children }) {
     }));
   }
 
+  function handleGetCompletedItems() {
+    return todos.items.filter((todo) => todo.completed);
+  }
+
   const contextValue = {
     items: todos.items,
     addTodo: handleAddTodo,
@@ -57,6 +62,7 @@ export function TodoContextProvider({ children }) {
     removeTodo: handleRemoveTodo,
     toggleTodo: handleToggleTodo,
     getItem: (id) => todos.items.find((todo) => String(todo.id) === String(id)),
+    getCompletedItems: handleGetCompletedItems,
   };
 
   useEffect(() => {

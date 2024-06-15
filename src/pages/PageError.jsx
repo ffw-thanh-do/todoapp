@@ -1,11 +1,7 @@
 import NotFound from '@/components/NotFound';
 
 const PageError = () => {
-  return (
-    <>
-      <NotFound />
-    </>
-  );
+  return <NotFound />;
 };
 
 export default PageError;

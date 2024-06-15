@@ -7,12 +7,13 @@ import { useParams } from 'react-router-dom';
 const DetailPage = () => {
   const { id } = useParams();
   const store = useContext(TodoContext);
+  const todo = store.getItem(id);
 
-  if (!store.getItem(id)) {
+  if (!todo) {
     return <NotFound />;
   }
 
-  return <TodoItem todo={store.getItem(id)} />;
+  return <TodoItem todo={todo} />;
 };
 
 export default DetailPage;
