@@ -1,7 +1,7 @@
-import TodoContext from '@/store/TodoContext';
-import { useContext, useState } from 'react';
 import Card from '@/components/Card';
 import TodoForm from '@/components/TodoForm';
+import TodoContext from '@/store/TodoContext';
+import { useContext, useState } from 'react';
 
 const TodoItem = ({ todo, isDetail = false }) => {
   const store = useContext(TodoContext);
@@ -13,17 +13,17 @@ const TodoItem = ({ todo, isDetail = false }) => {
       ...todo,
       title,
       description,
-    }
-    store.editTodo(item)
+    };
+    store.editTodo(item);
     setEditing(false);
-  }
+  };
 
   return (
     <>
-      {!editing && <Card todo={todo} editing={editing} setEditing={setEditing} isDetail={isDetail} /> }
-      {editing && <TodoForm onSubmit={handleUpdate} todo={todo} setEditing={setEditing} /> }
+      {!editing && <Card todo={todo} editing={editing} setEditing={setEditing} isDetail={isDetail} />}
+      {editing && <TodoForm onSubmit={handleUpdate} todo={todo} setEditing={setEditing} />}
     </>
-  )
-}
+  );
+};
 
-export default TodoItem
+export default TodoItem;

@@ -7,7 +7,7 @@ const HomePage = () => {
       <AddForm />
       <Todos />
     </>
-  )
-}
+  );
+};
 
-export default HomePage
+export default HomePage;

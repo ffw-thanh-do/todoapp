@@ -1,11 +1,11 @@
-import NotFound from '@/components/NotFound'
+import NotFound from '@/components/NotFound';
 
 const PageError = () => {
   return (
     <>
       <NotFound />
     </>
-  )
-}
+  );
+};
 
-export default PageError
+export default PageError;

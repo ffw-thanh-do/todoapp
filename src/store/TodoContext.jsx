@@ -1,6 +1,4 @@
-import { useEffect } from 'react';
-import { useState } from 'react';
-import { createContext } from 'react';
+import { createContext, useEffect, useState } from 'react';
 
 const TodoContext = createContext({
   items: [],
@@ -13,7 +11,7 @@ const TodoContext = createContext({
 
 const todoStorageKey = 'todos';
 
-export function TodoContextProvider({children}) {
+export function TodoContextProvider({ children }) {
   const [todos, setTodos] = useState({
     items: localStorage.getItem(todoStorageKey) ? JSON.parse(localStorage.getItem(todoStorageKey)) : [],
   });
@@ -59,17 +57,13 @@ export function TodoContextProvider({children}) {
     removeTodo: handleRemoveTodo,
     toggleTodo: handleToggleTodo,
     getItem: (id) => todos.items.find((todo) => String(todo.id) === String(id)),
-  }
+  };
 
   useEffect(() => {
     localStorage.setItem(todoStorageKey, JSON.stringify(todos.items));
   }, [todos]);
 
-  return (
-    <TodoContext.Provider value={contextValue}>
-      {children}
-    </TodoContext.Provider>
-  )
+  return <TodoContext.Provider value={contextValue}>{children}</TodoContext.Provider>;
 }
 
-export default TodoContext
+export default TodoContext;

@@ -9,16 +9,10 @@ const DetailPage = () => {
   const store = useContext(TodoContext);
 
   if (!store.getItem(id)) {
-    return (
-      <NotFound />
-    )
+    return <NotFound />;
   }
 
-  return (
-    <>
-      <TodoItem todo={store.getItem(id)} />
-    </>
-  )
-}
+  return <TodoItem todo={store.getItem(id)} />;
+};
 
-export default DetailPage
+export default DetailPage;
